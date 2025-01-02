@@ -126,3 +126,77 @@ if let string4 = optionalString1, age < 29 {
 let string5: String! = "ImplicitlyUnwrappedOptionalString"
 print(string5 ?? "Some default")
 print(string5.count)
+
+// MARK: - Control Flow
+let condition = true
+
+if condition {
+    print("Condition is true")
+} else if string5 != nil {
+    print(string5!)
+} else {
+    print("Something went wrong!")
+}
+
+let fruits = ["Apple", "Banana", "Oranges"]
+
+for fruit in fruits {
+    print("I like to eat eat eat \(fruit)")
+}
+
+var person: [String: String] = [:]
+person["name"] = "Taylor Swift"
+person["age"] = "30"
+person["job"] = "Singer"
+
+for (key, value) in person {
+    print("\(key): \(value)")
+}
+
+let vegetable = "Cucumber"
+let vegetableComment: String
+switch vegetable {
+case "Tomato":
+    vegetableComment = "Tomato tamato"
+case "Onions", "Egg plant":
+    vegetableComment = "Make a dish"
+case let localScopeValue where localScopeValue.hasSuffix("pepper"):
+    vegetableComment = "Spicy"
+default:
+    vegetableComment = "Good day"
+}
+
+print(vegetableComment)
+
+switch person {
+case let p where p["name"] == "Taylor Swift":
+    print("I am taylor swift")
+default:
+    print("I am someone you don't know")
+}
+
+for i in 1...10 {
+    if i % 2 == 0 {
+        print(i, terminator: "")
+    }
+}
+
+for i in 1..<10 {
+    if i % 2 == 0 {
+        print(i, terminator: "")
+    }
+}
+
+print("")
+
+var counter = 1
+while counter < 10 {
+    print(counter, terminator: ", ")
+    counter += 1
+}
+
+counter = 1
+repeat {
+    print(counter, terminator: ", ")
+    counter += 1
+} while counter < 10
